@@ -86,7 +86,9 @@
         findDetailedLinks: function () {
 	        var reports = [];
             _.each(this, function (child) {
-                if (child && child.componentName && child.attributes.name.indexOf('CardHyperlinkButton') >= 0) {
+                //Sitecore.Support.315261
+				//if (child && child.componentName && child.attributes.name.indexOf('CardHyperlinkButton') >= 0) {
+				if (child && child.componentName && child.attributes.name && child.attributes.name.indexOf('CardHyperlinkButton') >= 0) {
                     reports.push(child);
                 }
             });
